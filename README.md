@@ -1,450 +1,268 @@
-&#x20;<div align="center">
+# Data Visualization with Matplotlib & Seaborn
 
+**Six notebooks on turning raw data into charts that people can actually read.**
 
+![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C)
+![Seaborn](https://img.shields.io/badge/Seaborn-Statistical%20Visualization-4C72B0)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
 
-\# Data Visualization with Matplotlib \& Seaborn
+---
 
-
-
-\*\*Six notebooks on turning raw data into charts that people can actually read.\*\*
-
-
-
-!\[Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python\&logoColor=white)
-
-!\[Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter\&logoColor=white)
-
-!\[Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C)
-
-!\[Seaborn](https://img.shields.io/badge/Seaborn-Statistical%20Visualization-4C72B0)
-
-!\[Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas\&logoColor=white)
-
-
-
-</div>
-
-
-
-\---
-
-
-
-\## Overview
-
-
+## Overview
 
 A chart is an argument. It tells the reader where to look, what to compare, and what to conclude, and a poorly built one can mislead as easily as a good one can clarify.
 
-
-
-This repository is my structured, hands-on study of Python data visualization. It starts with how Matplotlib builds a figure and ends with statistical plotting in Seaborn. Every notebook is written to explain \*why\* a choice was made, not just to show the call that produces the picture: why a box plot suits one question and a histogram another, why a figure needs deliberate spacing, why default styling is only a starting point.
-
-
+This repository is my structured, hands-on study of Python data visualization. It starts with how Matplotlib builds a figure and ends with statistical plotting in Seaborn. Every notebook is written to explain *why* a choice was made, not just to show the call that produces the picture: why a box plot suits one question and a histogram another, why a figure needs deliberate spacing, why default styling is only a starting point.
 
 The material supports my work toward data analysis and machine learning, where looking at the data properly is the step that most often decides whether the later steps go well.
 
+---
 
-
-\---
-
-
-
-\## Notebooks
-
-
+## Notebooks
 
 The notebooks are numbered in the order I recommend reading them. Each one builds on the one before.
 
-
-
 | # | Notebook | What it covers |
-
 |---|---|---|
+| 01 | [Matplotlib Foundations](01_Matplotlib_Foundations.ipynb) | How a figure is put together, the plotting workflow, and the core concepts everything else depends on |
+| 02 | [Essential Plot Types](02_Matplotlib_Essential_Plot_Types.ipynb) | Line plots, bar charts, scatter plots, histograms, and choosing a suitable chart for the question |
+| 03 | [Customization and Professional Styling](03_Matplotlib_Customization_and_Professional_Styling.ipynb) | Titles, labels, legends, colors, annotations, ticks, grids, and improving chart readability |
+| 04 | [Subplots and Layouts](04_Matplotlib_Subplots_and_Layouts.ipynb) | Building multiple charts in one figure, arranging layouts, and comparing visualizations |
+| 05 | [Seaborn Fundamentals](05_Seaborn_Fundamentals.ipynb) | Statistical visualization, distributions, categorical comparisons, and relationships between variables |
+| 06 | [Advanced Seaborn](06_Advanced_Seaborn.ipynb) | Correlation heatmaps, deeper comparisons, and combining Seaborn with Matplotlib for more control |
 
-| 01 | \[Matplotlib Foundations](01\_Matplotlib\_Foundations.ipynb) | How a figure is put together, the plotting workflow, and the core concepts everything else depends on |
+---
 
-| 02 | \[Essential Plot Types](02\_Matplotlib\_Essential\_Plot\_Types.ipynb) | The common chart types, what each one is good at, and when to reach for it |
+## What You'll Find Inside
 
-| 03 | \[Customization \& Professional Styling](03\_Matplotlib\_Customization\_and\_Professional\_Styling.ipynb) | Colors, labels, axes, legends, annotations, and the finishing work that makes a chart presentable |
+### Matplotlib
 
-| 04 | \[Subplots \& Layouts](04\_Matplotlib\_Subplots\_and\_Layouts.ipynb) | Multi-panel figures, grid arrangements, spacing, and side-by-side comparison |
+Matplotlib provides the foundation for building and customizing charts. These notebooks cover:
 
-| 05 | \[Seaborn Fundamentals](05\_Seaborn\_Fundamentals.ipynb) | Statistical plots and a faster workflow for exploring data |
+- Figure and Axes objects and the object-oriented plotting approach
+- Line plots, bar charts, scatter plots, and histograms
+- Titles, axis labels, legends, tick formatting, and annotations
+- Colors, markers, line styles, and grid customization
+- Figure dimensions, margins, spacing, and layout adjustments
+- Subplots for comparing multiple charts within one figure
+- Improving chart clarity and presentation through deliberate styling
 
-| 06 | \[Advanced Seaborn](06\_Advanced\_Seaborn.ipynb) | Statistical visualization and richer views of relationships and group comparisons |
+### Seaborn
 
+Seaborn builds on Matplotlib and makes statistical visualization more convenient. The notebooks cover:
 
+- Distribution analysis using histograms and KDE plots
+- Box plots for comparing distributions across categories
+- Categorical comparisons and group-level patterns
+- Relationships between numerical variables
+- Correlation heatmaps for exploring relationships among multiple variables
+- Combining Seaborn's statistical plotting functions with Matplotlib customization
 
-\---
+---
 
+## Choosing the Right Chart
 
+The goal is not simply to produce a chart. It is to select a visualization that helps answer the question being asked.
 
-\## What You'll Find Inside
+| Analytical question | Suitable visualization |
+|---|---|
+| How is a numerical variable distributed? | Histogram, KDE plot, or box plot |
+| How do values compare across categories? | Bar plot or box plot |
+| How are two numerical variables related? | Scatter plot |
+| How does a value change over time? | Line plot |
+| Which numerical variables move together? | Correlation heatmap |
+| How do several patterns compare side by side? | Subplots |
 
+The right choice depends on the data, the analytical question, and the message the chart needs to communicate.
 
+---
 
-\### Matplotlib: control over every detail
+## Principles I Follow
 
+**1. Start with the question.**  
+Choose a chart because it answers a specific question, not simply because it looks interesting.
 
+**2. Make the chart understandable.**  
+Titles, labels, units, and legends should help the reader interpret the visualization without unnecessary guesswork.
 
-Matplotlib is the foundation most Python plotting libraries are built on. Learning it properly means understanding the object model (figures and axes) rather than relying on shortcuts, because that is what lets you fix a chart when the defaults get in the way.
+**3. Remove distractions.**  
+Decorative elements should not compete with the information being presented.
 
+**4. Use color intentionally.**  
+Color should distinguish meaningful groups or draw attention to important information rather than add decoration without purpose.
 
+**5. Keep comparisons honest.**  
+Scales, labels, and chart choices should represent the data fairly and avoid misleading the reader.
 
-\- The figure and axes objects, and why the object-oriented interface scales better than `plt.plot()` alone
+---
 
-\- Line, bar, scatter, histogram, and other core chart types
+## Practical Examples
 
-\- Titles, axis labels, tick formatting, legends, colors, and annotations
+### 1. Matplotlib: Monthly Sales Trend
 
-\- Figure size, margins, and spacing
-
-\- Multi-plot layouts for side-by-side comparison
-
-
-
-\### Seaborn: statistical plots with less boilerplate
-
-
-
-Seaborn sits on top of Matplotlib and integrates well with Pandas DataFrames, which makes exploratory analysis quicker.
-
-
-
-\- Distributions: histograms, KDE plots, and box plots
-
-\- Categorical comparisons across groups
-
-\- Relationships between numeric variables
-
-\- Correlation structure through heatmaps
-
-\- Combining Seaborn's high-level plots with Matplotlib's fine-grained customization
-
-
-
-\---
-
-
-
-\## Choosing the Right Chart
-
-
-
-Picking the chart comes before writing any code. This is the quick reference I work from:
-
-
-
-| Question | Good choices | Watch out for |
-
-|---|---|---|
-
-| How is a variable distributed? | Histogram, KDE, box plot | Bin width can change the story; try more than one |
-
-| How do categories compare? | Bar plot, box plot | Bars hide spread; show distributions when they matter |
-
-| How do two numeric variables relate? | Scatter plot | Overplotting on large datasets; reduce point opacity |
-
-| How does a value change over time? | Line plot | Uneven time gaps and truncated axes |
-
-| Which variables move together? | Correlation heatmap | Correlation does not imply causation |
-
-| Several comparisons at once? | Subplots | Keep scales consistent so panels stay comparable |
-
-
-
-These are starting points, not rules. The right answer depends on the data and on what the reader needs to take away.
-
-
-
-\---
-
-
-
-\## Principles I Follow
-
-
-
-These are the habits the notebooks try to build.
-
-
-
-1\. \*\*Start with the question.\*\* Decide what the chart should answer before choosing its type.
-
-2\. \*\*Label everything a stranger would need.\*\* Title, axis labels, units, and a legend only where it earns its space.
-
-3\. \*\*Remove what does not help.\*\* Heavy gridlines, redundant borders, and decorative color distract from the data.
-
-4\. \*\*Use color on purpose.\*\* Highlight what matters, keep palettes readable, and do not rely on color alone.
-
-5\. \*\*Keep comparisons honest.\*\* Consistent scales, sensible axis ranges, and no tricks of proportion.
-
-
-
-\---
-
-
-
-\## Example
-
-
-
-Even a simple chart improves when it is built deliberately. Here the peak is called out directly, so the reader does not have to hunt for it.
-
-
+This example shows how to build a line chart, label it clearly, and annotate an important observation.
 
 ```python
-
 import matplotlib.pyplot as plt
 
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+sales = [12000, 14500, 13200, 16800, 19100, 21500]
 
+fig, ax = plt.subplots(figsize=(10, 5))
 
-months = \["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-
-sales = \[12000, 14500, 13200, 16800, 19100, 21500]
-
-
-
-fig, ax = plt.subplots(figsize=(9, 5))
-
-
-
-ax.plot(months, sales, marker="o", linewidth=2, color="#1f77b4")
-
-
-
-\# Call out the peak instead of leaving the reader to find it
-
-ax.annotate(
-
-&#x20;   "Peak: 21,500",
-
-&#x20;   xy=(5, 21500),
-
-&#x20;   xytext=(3.4, 20800),
-
-&#x20;   arrowprops=dict(arrowstyle="->", color="gray"),
-
+ax.plot(
+    months,
+    sales,
+    marker="o",
+    linewidth=2,
+    color="steelblue",
+    label="Monthly Sales"
 )
 
+ax.annotate(
+    "Highest sales",
+    xy=("Jun", 21500),
+    xytext=("Apr", 22000),
+    arrowprops={"arrowstyle": "->"}
+)
 
-
-ax.set\_title("Monthly Sales, January to June", loc="left", fontweight="bold")
-
-ax.set\_xlabel("Month")
-
-ax.set\_ylabel("Sales (units)")
-
-
-
+ax.set_title("Monthly Sales Trend", fontsize=14)
+ax.set_xlabel("Month")
+ax.set_ylabel("Sales")
+ax.legend()
 ax.grid(axis="y", alpha=0.3)
 
-
-
-fig.tight\_layout()
-
+fig.tight_layout()
 plt.show()
-
 ```
 
+### 2. Seaborn: Comparing Bills Across Days
 
-
-The same idea carries over to Seaborn, where a few lines give a grouped statistical comparison:
-
-
+A box plot helps compare the distribution of restaurant bills across different days and smoking groups.
 
 ```python
-
 import matplotlib.pyplot as plt
-
 import seaborn as sns
 
-
-
-sns.set\_theme(style="whitegrid")
-
-tips = sns.load\_dataset("tips")
-
-
+tips = sns.load_dataset("tips")
 
 fig, ax = plt.subplots(figsize=(9, 5))
 
+sns.boxplot(
+    data=tips,
+    x="day",
+    y="total_bill",
+    hue="smoker",
+    ax=ax
+)
 
+ax.set_title("Restaurant Bills by Day and Smoking Status")
+ax.set_xlabel("Day")
+ax.set_ylabel("Total Bill")
 
-sns.boxplot(data=tips, x="day", y="total\_bill", hue="smoker", ax=ax)
-
-
-
-ax.set\_title("Bill Amount by Day and Smoking Status", loc="left", fontweight="bold")
-
-ax.set\_xlabel("Day")
-
-ax.set\_ylabel("Total bill ($)")
-
-
-
-fig.tight\_layout()
-
+fig.tight_layout()
 plt.show()
-
 ```
 
+These examples illustrate the general workflow. The notebooks provide the step-by-step learning material and additional practice.
 
+---
 
-\---
+## Getting Started
 
+### Requirements
 
+- Python
+- Jupyter Notebook or JupyterLab
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
 
-\## Getting Started
+### Installation
 
-
-
-\*\*1. Clone the repository\*\*
-
-
+Clone the repository:
 
 ```bash
-
 git clone https://github.com/TheAbdullahWaseem/Data-Visualization.git
-
 cd Data-Visualization
-
 ```
 
+Create and activate a virtual environment if you want to keep the project dependencies separate.
 
-
-\*\*2. Create an isolated environment\*\* (recommended)
-
-
+**Windows:**
 
 ```bash
-
-python -m venv venv
-
-
-
-\# macOS / Linux
-
-source venv/bin/activate
-
-
-
-\# Windows
-
-venv\\Scripts\\activate
-
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
-
-
-\*\*3. Install the dependencies\*\*
-
-
+**macOS/Linux:**
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
+Install the required libraries:
+
+```bash
 pip install jupyter numpy pandas matplotlib seaborn
-
 ```
 
-
-
-\*\*4. Launch Jupyter and open a notebook\*\*
-
-
+Start Jupyter Notebook:
 
 ```bash
-
 jupyter notebook
-
 ```
 
+Open a notebook and run its cells in sequence.
 
+**Note:** Seaborn's built-in example datasets, such as `tips`, may require an internet connection the first time they are downloaded.
 
-Run each notebook from top to bottom. If a notebook needs a dataset or an extra package, it says so at the start. Note that `sns.load\_dataset()` downloads its sample data, so those cells need an internet connection the first time.
+---
 
-
-
-\---
-
-
-
-\## Repository Structure
-
-
+## Repository Structure
 
 ```text
-
 Data-Visualization/
-
+│
+├── 01_Matplotlib_Foundations.ipynb
+├── 02_Matplotlib_Essential_Plot_Types.ipynb
+├── 03_Matplotlib_Customization_and_Professional_Styling.ipynb
+├── 04_Matplotlib_Subplots_and_Layouts.ipynb
+├── 05_Seaborn_Fundamentals.ipynb
+├── 06_Advanced_Seaborn.ipynb
 ├── .gitignore
-
-├── 01\_Matplotlib\_Foundations.ipynb
-
-├── 02\_Matplotlib\_Essential\_Plot\_Types.ipynb
-
-├── 03\_Matplotlib\_Customization\_and\_Professional\_Styling.ipynb
-
-├── 04\_Matplotlib\_Subplots\_and\_Layouts.ipynb
-
-├── 05\_Seaborn\_Fundamentals.ipynb
-
-├── 06\_Advanced\_Seaborn.ipynb
-
 └── README.md
-
 ```
 
+The repository is organized to progress from Matplotlib fundamentals to chart customization, layout design, and statistical visualization with Seaborn.
 
+---
 
-\---
+## Where This Is Heading
 
+This repository is part of my broader preparation for a career in data analysis and machine learning. I have been building my foundations in Python, NumPy, Pandas, and SQL, and I am developing the ability to move from data preparation to analysis and clear visual communication.
 
+The next step is to apply these skills to real-world datasets and portfolio projects, where visualizations can help reveal patterns, investigate questions, and communicate findings. I also intend to explore interactive visualization as my project work develops.
 
-\## Where This Is Heading
+---
 
+## About the Author
 
+**Abdullah Waseem**  
+Computer Science Graduate | Aspiring Data Analyst, Data Scientist, and Machine Learning Engineer
 
-Visualization is one piece of a larger toolkit that also includes Python, NumPy, Pandas, SQL, and Power BI. Data gets retrieved and cleaned with some of those tools, and with these libraries it gets explored and explained.
+I use these repositories to document my learning, practice independently, and build a portfolio grounded in practical work.
 
+- **GitHub:** [TheAbdullahWaseem](https://github.com/TheAbdullahWaseem)
+- **Repository:** [Data-Visualization](https://github.com/TheAbdullahWaseem/Data-Visualization)
 
+Suggestions and constructive feedback are welcome.
 
-Next, I plan to apply these techniques to larger, messier, real-world datasets and to build full analyses where every chart has to justify its place. I also want to explore interactive visualization as a follow-up.
+---
 
-
-
-\---
-
-
-
-\## About the Author
-
-
-
-I'm \*\*Abdullah Waseem\*\*, a Computer Science graduate building a career in data analysis and machine learning. I learn by working through fundamentals carefully and then applying them in projects, and this repository is a record of that process.
-
-
-
-\- GitHub: \[@TheAbdullahWaseem](https://github.com/TheAbdullahWaseem)
-
-
-
-Feedback and suggestions are welcome. If you spot an error or have a better way to approach something, please open an issue.
-
-
-
-\---
-
-
-
-<div align="center">
-
-
-
-If this repository helped you, consider giving it a star.
-
-
-
-</div>
-
+*Learning the tools is the beginning. Learning when and why to use them is what makes the difference.*
